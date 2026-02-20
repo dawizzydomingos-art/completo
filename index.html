@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="logopc.png" type="image/png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plataforma Comunitária de Apoio — Denúncias Anónimas</title>
+<style>
+:root{
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --accent:#0b5ed7;
+  --muted:#6b7280;
+  --success:#16a34a;
+  --danger:#dc2626;
+  --glass: rgba(255,255,255,0.6);
+  --radius:16px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:linear-gradient(180deg, #eef2ff 0%, var(--bg) 100%);
+  font-size:16px;
+  line-height:1.5;
+  color:#0f172a;
+  padding:20px;
+}
+
+/* Container vertical */
+.container{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+  max-width:800px;
+  margin:0 auto;
+}
+
+/* CARDS */
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:0 6px 24px rgba(2,6,23,0.06);
+}
+
+/* HEADER */
+header{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  text-align:center;
+  margin-bottom:20px;
+}
+.logo{
+  width:56px; height:56px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  color:white;
+  background:linear-gradient(135deg, var(--accent), #4f46e5);
+}
+h1{margin:0;font-size:1.5rem;}
+p.lead{margin:0;color:var(--muted);font-size:1rem;}
+
+/* TEXTOS */
+h2,h4{margin-bottom:12px;}
+.muted{color:var(--muted); font-size:0.95rem;}
+ul.muted{padding-left:20px;}
+
+/* FORMULÁRIO */
+form{display:flex; flex-direction:column; gap:12px;}
+label{font-weight:600;}
+input,select,textarea{
+  width:100%; padding:12px;
+  border-radius:12px; border:1px solid #e6e9ef;
+}
+textarea{min-height:100px;}
+.row{display:flex; gap:12px; flex-wrap:wrap;}
+.row > *{flex:1 1 100%;} /* vertical, cada campo ocupa toda linha */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:white;cursor:pointer;}
+.btn.secondary{background:#fff;color:var(--accent);border:1px solid rgba(11,94,215,0.12);}
+.btn.warn{background:#dc2626;color:white;}
+
+footer{text-align:center;color:var(--muted);margin-top:12px;font-size:0.88rem;}
+
+/* CONTACT CARD */
+.contact-card{padding:16px; border-radius:12px; border:1px solid rgba(2,6,23,0.04); background:#fff; box-shadow:0 6px 20px rgba(2,6,23,0.03); margin-bottom:20px;}
+.contact-card .tel{font-weight:700;margin-bottom:4px;}
+
+.ultimo{
+  padding:16px; border-radius:12px; border:1px solid rgba(2,6,23,0.04); background:#fff; box-shadow:0 6px 20px rgba(2,6,23,0.03); margin-bottom:20px;
+}
+
+
+
+.top-nav{
+  position:sticky;
+  top:0;
+  z-index:2000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 20px;
+  margin-bottom:20px;
+  background:rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  border-radius:16px;
+  box-shadow:0 6px 20px rgba(2,6,23,0.08);
+}
+
+.nav-logo{
+  width:42px;
+  height:42px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  color:white;
+  background:linear-gradient(135deg, var(--accent), #4f46e5);
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:14px;
+  margin:0;
+  padding:0;
+}
+
+.nav-links a{
+  text-decoration:none;
+  font-size:0.95rem;
+  color:#0f172a;
+  padding:6px 10px;
+  border-radius:8px;
+  transition:0.25s;
+}
+
+.nav-links a:hover{
+  background:rgba(11,94,215,0.08);
+  color:var(--accent);
+}
+
+.nav-alert{
+  background:var(--danger);
+  color:white !important;
+}
+
+
+</style>
+</head>
+<body>
+
+
+<nav class="top-nav">
+  <div class="nav-logo">PC</div>
+  <h3 >
+  Plataforma Comunitária de Apoio
+</h3>
+
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#informacoes">Informações</a></li>
+    <li><a href="#denuncia" class="nav-alert">Denunciar</a></li>
+    <li><a href="#contactos">Contactos</a></li>
+    <li><a href="#comunidades">Comunidades</a></li>
+  </ul>
+</nav>
+
+
+  <header>
+    <div class="logo" id="inicio">PC</div>
+    <h1>Plataforma Comunitária de Apoio</H1>
+
+    <p class="lead">Denúncias anónimas, contactos e informação para a comunidade</p>
+  </header>
+
+  <div class="container">
+
+    <div class="card" id="informações">
+      <h2>Bem-vindo à Plataforma Comunitária de Apoio</h2>
+      <p class="muted">Esta plataforma tem como objetivo oferecer informações, suporte e canais de denúncia anónimos para proteger todos os membros da comunidade. Conhecer os tipos de abusos e saber como agir é essencial para manter nossa comunidade segura.</p>
+    </div>
+
+    <div class="card">
+      <h2>Informações sobre abusos</h2>
+      <p class="muted">Diversas formas de abuso podem ocorrer nas comunidades, incluindo violência doméstica, abuso sexual, exploração de crianças, assédio e discriminação. Reconhecer os sinais é essencial.</p>
+      <ul class="muted">
+        <li><strong>Violência doméstica:</strong> agressões físicas, psicológicas ou emocionais dentro de casa.</li>
+        <li><strong>Abuso sexual:</strong> exploração, assédio e estupro.</li>
+        <li><strong>Trabalho infantil:</strong> crianças envolvidas em atividades perigosas ou exploração laboral.</li>
+        <li><strong>Tráfico de pessoas:</strong> exploração para trabalho forçado ou sexual.</li>
+        <li><strong>Negligência ou abuso contra idosos:</strong> violência física, psicológica ou financeira.</li>
+        <li><strong>Discriminação social:</strong> abusos motivados por gênero, etnia ou condição social.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="denuncia">
+      <h2>Reportar de forma anónima</h2>
+      <p class="muted">Use este formulário para registar um incidente.</p>
+      <form id="reportForm">
+        <div>
+          <label for="tipo">Tipo de incidente</label>
+          <select id="tipo">
+            <option value="">— selecione —</option>
+            <option>Violência doméstica</option>
+            <option>Abuso sexual</option>
+            <option>Assalto / Roubo</option>
+            <option>Ameaça / Intimidação</option>
+            <option>Tráfico ou recrutamento forçado</option>
+            <option>Outra</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="local">Local (bairro, rua, distrito) — se souber</label>
+          <input id="local" type="text" placeholder="Ex.: Bairro X, Rua Y, próxima à escola" />
+        </div>
+
+        <div>
+          <label for="descricao">Descrição</label>
+          <textarea id="descricao" required placeholder="Descreva o que aconteceu, quantas pessoas, horários, ferimentos, etc."></textarea>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="quando">Quando aconteceu?</label>
+            <input id="quando" type="text" placeholder="Ex.: 2025-12-01 ou 'há 2 dias'" />
+          </div>
+          <div>
+            <label for="testemunhas">Há testemunhas?</label>
+            <input id="testemunhas" type="text" placeholder="Ex: Sim-vizinhos" />
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:10px;">
+         
+          <button type="submit" class="btn">Enviar</button>
+          
+        </div>
+
+        <div id="formMsg" style="margin-top:12px;"></div>
+      </form>
+    </div>
+
+    <div class="card contact-card" id="contactos">
+      <h3>Contactos de emergência</h3>
+      <div class="tel">+258 21 111 222</div><small>Polícia — emergência</small>
+      <div class="tel">+258 84 000 1111</div><small>Centro de Saúde</small>
+      <div class="tel">+258 82 333 444</div><small>Linha de Apoio</small>
+      <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px;">
+        <a class="btn" href="tel:+258869894030">Ligar agora</a>
+        <a class="btn secondary" href="mailto:dawizzydomingos@gmail.com">Enviar email</a>
+      </div>
+    </div>
+
+    <div class="card contact-card">
+      <h4>Dicas importantes</h4>
+      <ul class="muted">
+        <li>Mantenha números de emergência sempre acessíveis.</li>
+        <li>Denuncie abusos de forma segura e anónima.</li>
+        <li>Converse com familiares e vizinhos sobre prevenção.</li>
+        <li>Procure apoio psicológico se você ou alguém próximo estiver em risco.</li>
+      </ul>
+    </div>
+
+    <div class="ultimo" id="comunidades">
+      <h2>Nossas comunidades</h2>
+<p style="color: #0b5ed7;"><a href="radio.html" style="text-decoration: none;">Radio Watana 107.0</a></p>
+<a href="C:\Users\ajrad\OneDrive\Desktop\ABDULLAH\PROJECTOS\PROJECTO FINAL\projectos finais\programador.html" style="text-decoration: none;">Sobre o Programador</a>
+    </div>
+
+    <footer>© <span id="year"></span> Plataforma Comunitária</footer>
+
+  </div>
+
+<script>
+const form    = document.getElementById('reportForm');
+const formMsg = document.getElementById('formMsg');
+const year    = document.getElementById('year');
+
+year.textContent = new Date().getFullYear();
+
+function showMessage(msg, type = 'success') {
+  formMsg.innerHTML = `<div class="${type}">${msg}</div>`;
+  setTimeout(() => { formMsg.innerHTML = ''; }, 5000);
+}
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+
+  const descricao = document.getElementById('descricao').value.trim();
+  if (!descricao) {
+    showMessage('A descrição é obrigatória.', 'error');
+    return;
+  }
+
+  const tipo       = document.getElementById('tipo').value       || 'Não especificado';
+  const local      = document.getElementById('local').value      .trim() || 'Não informado';
+  const quando     = document.getElementById('quando').value     .trim() || 'Não informado';
+  const testemunhas= document.getElementById('testemunhas').value.trim() || 'Não informado';
+
+  const mensagem = `Novo Relatório Anónimo
+──────────────────────────────
+Tipo:        ${tipo}
+Local:       ${local}
+Quando:      ${quando}
+Testemunhas: ${testemunhas}
+Descrição:
+${descricao}
+──────────────────────────────
+Enviado em:  ${new Date().toLocaleString('pt-MZ')}`;
+
+  const numero = '258869894030';           // sem o +
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+  window.open(url, '_blank');
+
+  showMessage('A mensagem foi aberta no WhatsApp. Confirme o envio.');
+  form.reset();
+});
+</script>
+</body>
+</html>
